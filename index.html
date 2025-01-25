@@ -73,6 +73,10 @@
         display: none;
       }
     </style>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      emailjs.init("NF7DteqbwDdZJx8En");
+    </script>
   </head>
   <body>
     <div class="card">
@@ -157,11 +161,28 @@
         const email = document.getElementById("email").value;
 
         if (name && email) {
-          // Simulate an API call
-          setTimeout(() => {
-            form.classList.add("hidden");
-            successMessage.classList.remove("hidden");
-          }, 1000);
+          emailjs
+            .send("service_ayhvhq8", "template_u88aqoi", {
+              name: name,
+              email: email,
+            })
+            .then(
+              (response) => {
+                console.log(
+                  "Correo enviado con éxito:",
+                  response.status,
+                  response.text
+                );
+                form.classList.add("hidden");
+                successMessage.classList.remove("hidden");
+              },
+              (error) => {
+                console.error("Error al enviar el correo:", error);
+                alert(
+                  "Hubo un error al enviar el correo. Inténtalo más tarde."
+                );
+              }
+            );
         }
       });
     </script>
