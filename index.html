@@ -14,9 +14,11 @@
         background-color: white;
         margin: 0;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
+        min-height: 100svh;
+        padding: 16px;
       }
 
       .card {
@@ -26,6 +28,11 @@
         max-width: 400px;
         width: 100%;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 90svh;
       }
 
       .card h1 {
@@ -71,6 +78,11 @@
 
       .hidden {
         display: none;
+      }
+      .manifiesto {
+        max-width: 700px;
+        text-align: center;
+        color: #333;
       }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -186,9 +198,9 @@
         <button type="submit" class="button">¡Luchemos juntos!</button>
       </form>
     </div>
-    <!-- <div class="manifiesto">
+    <div class="manifiesto">
       <section>
-        <h1>Manifiesto "Make Spain Great Again"</h1>
+        <h1>Manifiesto</h1>
         <p>Por una España fuerte, unida y orgullosa de su esencia.</p>
       </section>
 
@@ -299,7 +311,7 @@
           Hagamos que España vuelva a ser grande.
         </p>
       </section>
-    </div> -->
+    </div>
 
     <script>
       const form = document.getElementById("waitlist-form");
